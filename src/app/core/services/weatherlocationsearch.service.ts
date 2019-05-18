@@ -5,14 +5,18 @@ import { map, catchError, tap } from 'rxjs/operators';
 
 @Injectable()
 export class WeatherlocationsearchService {
+  apiKey: string = 'ADgKDhujgzeWoJzneLPd3jPlcDnaajLF';
+  baseUrl: string = 'https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=ADgKDhujgzeWoJzneLPd3jPlcDnaajLF&q=';
 
-  baseUrl: string = 'https://www.metaweather.com/api/location/search/?query='
 
-  constructor() { }
-/*
+  constructor(private http: HttpClient) { }
+
   searchLocation (queryString: string){
      let _URL = this.baseUrl + queryString;
-     return this._http.get(_URL);
+     console.log('Query '+_URL) ;
+     var response = this.http.get(_URL).subscribe((res)=> { console.log(res);});
+     console.log(response) ;
+     return response;
   }
-  */
+
 }

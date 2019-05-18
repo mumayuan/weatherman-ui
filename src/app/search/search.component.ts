@@ -15,19 +15,25 @@ export class SearchComponent implements OnInit {
 
   results: any[] = [];
   queryField: FormControl = new FormControl('');
-  constructor(private mydataService: MydataService) {  }
+  constructor(private mydataService: MydataService,
+  private myWeatherlocationsearchService: WeatherlocationsearchService) {  }
 
   ngOnInit() {
 
     console.log('During search init');
 
 
-    this.queryField.valueChanges.debounceTime(2000)
+    this.queryField.valueChanges.debounceTime(200)
        .subscribe(
+            queryString => this.myWeatherlocationsearchService.searchLocation(queryString)
+            )
+
+       /*.subscribe(
         result => {
             console.log('-- -- '+result);
         }
-     );
+        ) */
+     ;
 
 /*
 
