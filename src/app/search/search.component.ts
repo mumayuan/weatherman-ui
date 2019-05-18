@@ -28,11 +28,13 @@ export class SearchComponent implements OnInit {
             queryString => this.myWeatherlocationsearchService.searchLocation(queryString)
             )
 
-       /*.subscribe(
+       .subscribe(
         result => {
-            console.log('-- -- '+result);
+            console.log('Query returned');
+            console.log(result);
+            console.log(result.json.LocalizedName);
         }
-        ) */
+        )
      ;
 
 /*
