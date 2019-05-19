@@ -76,7 +76,8 @@ export class SearchComponent implements OnInit {
   }
 
   onClickMe(){
-     console.log('Clicked');
+     console.log('Clicked '+ this.queryField);
+     console.log(this.queryField);
   }
 
   public vegaInit(spec: any) {
