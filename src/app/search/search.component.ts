@@ -75,7 +75,9 @@ export class SearchComponent implements OnInit {
 
   }
 
-
+  onClickMe(){
+     console.log('Clicked');
+  }
 
   public vegaInit(spec: any) {
    var view1 = new vega.View(vega.parse(spec))

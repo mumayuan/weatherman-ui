@@ -1,6 +1,11 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 .container {
-    width: 300px;
+    width: 800px;
     font: 17px Calibri;
+}
+
+.searchbutton {
+    padding-left: 600px;
+    border: 10px;
 }

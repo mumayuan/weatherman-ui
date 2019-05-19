@@ -5,20 +5,24 @@
   <mat-form-field class="container">
 
     <!-- ADD AN INPUT BOX OF TYPE TEXT AND LINK IT TO THE AUTO COMPLETE PANEL. -->
-    <input type="text" placeholder="Search Cities ..."
+    <input type="text" placeholder="Type a city name ..."
            matInput
            [formControl]="queryField"
            [matAutocomplete]="auto">
 
     <!-- CREATE AUTO COMPLETE PANEL WITH OPTIONS. -->
     <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let city of cities" [value]="city.LocalizedName">
-        {{ city.LocalizedName }} , {{city.Country.LocalizedName}}
+      <mat-option *ngFor="let city of cities" [value]="city.LocalizedName+', '+ city.AdministrativeArea.LocalizedName+ ', ' +city.Country.LocalizedName">
+        {{ city.LocalizedName }}, {{city.AdministrativeArea.LocalizedName}}, {{city.Country.LocalizedName}}
       </mat-option>
     </mat-autocomplete>
 
   </mat-form-field>
 
+
+</div>
+<div class="searchbutton">
+<button mat-raised-button color="primary"  (click)="onClickMe()">Tell me weather</button>
 </div>
 <h2>Results</h2>
 
