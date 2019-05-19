@@ -77,7 +77,12 @@ export class SearchComponent implements OnInit {
 
   onClickMe(){
      console.log('Clicked '+ this.queryField);
+
      console.log(this.queryField);
+     console.log('selected '+ this.queryField.value.Key + " of "+ this.queryField.value.LocalizedName);
+
+
+
   }
 
   public vegaInit(spec: any) {
@@ -88,5 +93,10 @@ export class SearchComponent implements OnInit {
       .run();
 
 
+  }
+
+  displayFn(city) {
+    if(! city ) return '';
+    else return city.LocalizedName+ ', ' + city.AdministrativeArea.LocalizedName + ', '+ city.Country.LocalizedName;
   }
 }

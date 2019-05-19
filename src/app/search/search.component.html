@@ -11,8 +11,8 @@
            [matAutocomplete]="auto">
 
     <!-- CREATE AUTO COMPLETE PANEL WITH OPTIONS. -->
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let city of cities" [value]="city.Key+ city.LocalizedName+', '+ city.AdministrativeArea.LocalizedName+ ', ' +city.Country.LocalizedName">
+    <mat-autocomplete #auto="matAutocomplete"  [displayWith]="displayFn">
+      <mat-option *ngFor="let city of cities"   [value]="city">
         {{ city.LocalizedName }}, {{city.AdministrativeArea.LocalizedName}}, {{city.Country.LocalizedName}}
       </mat-option>
     </mat-autocomplete>
