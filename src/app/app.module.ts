@@ -12,7 +12,7 @@ import { MydataService } from './core/services/mydata.service';
 import { HttpClientModule }    from '@angular/common/http';
 import { WeatherlocationsearchService } from './core/services/weatherlocationsearch.service';
 import { MatAutocompleteModule, MatInputModule } from '@angular/material';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -26,6 +26,7 @@ import { MatAutocompleteModule, MatInputModule } from '@angular/material';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     MatAutocompleteModule,

@@ -1,18 +1,26 @@
 <h2>Enter a city name to search for weather </h2>
 
 
+<div>
+  <mat-form-field class="container">
 
+    <!-- ADD AN INPUT BOX OF TYPE TEXT AND LINK IT TO THE AUTO COMPLETE PANEL. -->
+    <input type="text" placeholder="Search Cities ..."
+           matInput
+           [formControl]="queryField"
+           [matAutocomplete]="auto">
 
-<section class="filter-wrapper">
-  <div class="keyword-wrapper">
-    <input type="text" id="keyword" [formControl]="queryField" placeholder="Search for Weather..." autofocus/>
-  </div>
+    <!-- CREATE AUTO COMPLETE PANEL WITH OPTIONS. -->
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let city of cities" [value]="city.LocalizedName">
+        {{ city.LocalizedName }} , {{city.Country.LocalizedName}}
+      </mat-option>
+    </mat-autocomplete>
 
-  <hr>
-  <ul class="filter-select">
-    <li class="filter-select-list"><img src="" alt="" width="50" height="50"><p class="location-name"></p>
-    </li>
-  </ul>
+  </mat-form-field>
+
+</div>
+<h2>Results</h2>
 
 <div class="itemContainer" >
 

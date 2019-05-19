@@ -13,7 +13,7 @@ import * as vega from 'vega';
 })
 export class SearchComponent implements OnInit {
 
-  results: any[] = [];
+  cities: any[] = [];
   queryField: FormControl = new FormControl('');
   constructor(private mydataService: MydataService,
   private myWeatherlocationsearchService: WeatherlocationsearchService) {  }
@@ -50,7 +50,7 @@ export class SearchComponent implements OnInit {
                if (term != '') {
                  this.myWeatherlocationsearchService.searchLocation(term).subscribe(
                    data => {
-                     this.results = data as any[];
+                     this.cities = data as any[];
                      console.log('Get from Service as data array') ;
                      console.log(data);
                  })
