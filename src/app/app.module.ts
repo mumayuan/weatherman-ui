@@ -11,7 +11,7 @@ import { SearchComponent } from './search/search.component';
 import { MydataService } from './core/services/mydata.service';
 import { HttpClientModule }    from '@angular/common/http';
 import { WeatherlocationsearchService } from './core/services/weatherlocationsearch.service';
-
+import { MatAutocompleteModule, MatInputModule } from '@angular/material';
 
 
 
@@ -28,6 +28,8 @@ import { WeatherlocationsearchService } from './core/services/weatherlocationsea
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatAutocompleteModule,
+    MatInputModule,
     ReactiveFormsModule
   ],
   providers: [MydataService, WeatherlocationsearchService],

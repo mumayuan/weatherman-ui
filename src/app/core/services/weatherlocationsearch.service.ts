@@ -14,13 +14,9 @@ export class WeatherlocationsearchService {
   searchLocation (queryString: string){
      let _URL = this.baseUrl + queryString;
      console.log('Query '+_URL) ;
-     var response = this.http.get(_URL).subscribe((res)=> {
-       console.log('Query In service');
-       console.log(res);
-       console.log('First City : '+res[0].LocalizedName);
-     });
+     return this.http.get(_URL);
 
-     return response;
+
   }
 
 }

@@ -21,21 +21,42 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
 
     console.log('During search init');
+/*
 
-
-    this.queryField.valueChanges.debounceTime(200)
+    this.queryField.valueChanges
+       .debounceTime(200)
        .subscribe(
-            queryString => this.myWeatherlocationsearchService.searchLocation(queryString)
+            queryString => {
+               this.myWeatherlocationsearchService.searchLocation(queryString)
+            }
             )
 
        .subscribe(
         result => {
             console.log('Query returned');
             console.log(result);
-            console.log(result.json.LocalizedName);
+
+            results = result;
         }
         )
+
      ;
+     */
+
+      this.queryField.valueChanges
+            .debounceTime(500)
+            .subscribe(
+            term => {
+               if (term != '') {
+                 this.myWeatherlocationsearchService.searchLocation(term).subscribe(
+                   data => {
+                     this.results = data as any[];
+                     console.log('Get from Service as data array') ;
+                     console.log(data);
+                 })
+               }
+           }) ;
+
 
 /*
 
