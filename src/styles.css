@@ -5,7 +5,20 @@
     font: 17px Calibri;
 }
 
-.searchbutton {
-    padding-left: 600px;
+.searchcontainer  button,
+
+.searchcontainer  a{
+    float: right;
     border: 10px;
+    margin: 10px;
+}
+
+
+.searchcontainer  {
+
+    border: 0px solid red;
+
+    width: 700px;
+    height: 100px;
+    height: 100px;
 }

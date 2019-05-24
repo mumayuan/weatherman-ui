@@ -7,15 +7,15 @@ import { map, catchError, tap } from 'rxjs/operators';
 @Injectable()
 export class MydataService {
 
-  itemBaseUrl: string = 'http://127.0.0.1:8999/api/myitems'
-  vegaBaseUrl: string = 'http://127.0.0.1:8999/api/myheroesspec'
+  apiGateWayURL: string = 'https://7bvg5o5zna.execute-api.us-east-1.amazonaws.com/default/WeatherServiceJava?location='
+
 
 
   constructor(private http: HttpClient) { }
 
 
-   getSpec(): Observable<string> {
-            return this.http.get<string>(this.vegaBaseUrl)
+   getForecast(location: string): Observable<any> {
+            return this.http.get<string>(this.apiGateWayURL+ location)
                 .pipe(
                     map( spec => {
                         return spec;
