@@ -17,6 +17,7 @@ export class SearchComponent implements OnInit {
   content: any;
   weather: any;
   date: any;
+  fiveDays: any;
   cities: any[] = [];
   queryField: FormControl = new FormControl('');
   constructor(private mydataService: MydataService,
@@ -48,13 +49,13 @@ export class SearchComponent implements OnInit {
 
   reset(){
     this.queryField.reset();
-    this.content = null;
+    this.weather = null;
   }
   getWeather(){
      console.log('Clicked '+ this.queryField);
 
      console.log(this.queryField);
-     console.log('selected '+ this.queryField.value.Key + " of "+ this.queryField.value.LocalizedName);
+     //console.log('selected '+ this.queryField.value.Key + " of "+ this.queryField.value.LocalizedName);
      this.content = this.queryField.value;
 
 
@@ -74,7 +75,7 @@ export class SearchComponent implements OnInit {
                     console.log(response.weather);
                     this.weather = response.weather;
                     this.date = response.date;
-
+                    this.fiveDays = response.fivedays;
                     this.vegaInit(response.vega);
                   }
                   ,

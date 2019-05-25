@@ -23,7 +23,7 @@
 </div>
 <div class="searchcontainer">
   <button mat-raised-button color="accent.re"  (click)="reset()">clear</button>
-<button mat-raised-button color="primary"  (click)="getWeather()">Tell me weather</button>
+  <button mat-raised-button color="primary"  (click)="getWeather()">Tell me weather</button>
 </div>
 
 <div class="itemContainer"  *ngIf="weather" >
@@ -31,14 +31,24 @@
   on {{date}}
 
   <h2>Five Days</h2>
-  <div layout="row">
-    <div flex>First item in row</div>
-    <div flex>Second item in row</div>
+
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="15px" fxLayoutAlign="center"
+       >
+    <div fxFlex="20%"   *ngFor="let day of fiveDays" >
+      <div class="dayBox" >
+      <label class="dayText">  {{day.date}} </label>
+      <img mat-card-image class="img" src="https://developer.accuweather.com/sites/default/files/{{day.dayIcon}}-s.png">
+      <label class="dayText"> Day {{day.dayText}} </label>
+      <img mat-card-image class="img" src="https://developer.accuweather.com/sites/default/files/{{day.nightIcon}}-s.png">
+      <label > Night {{day.nightText}} </label>
+      </div>
+    </div>
+
   </div>
-  <div layout="column">
-    <div flex>First item in column</div>
-    <div flex>Second item in column</div>
-  </div>
+
+
+
+
   <h2>Temperature Trending</h2>
 
   <div style="height:100px;"  id="vegabox"> </div>

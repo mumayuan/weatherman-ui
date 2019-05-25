@@ -16,9 +16,28 @@
 
 .searchcontainer  {
 
-    border: 0px solid red;
 
     width: 700px;
     height: 100px;
     height: 100px;
+}
+
+
+.img {
+  width: 40%;
+
+}
+
+.dayBox {
+  width: 100%;
+  border: 1px solid purple;
+  height: 300px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.dayText {
+  width: 100px;
+  height: 60px;
+
 }
