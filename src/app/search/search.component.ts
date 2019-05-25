@@ -4,7 +4,8 @@ import { FormControl } from '@angular/forms';
 import { MydataService } from '../core/services/mydata.service';
 import { WeatherlocationsearchService } from '../core/services/weatherlocationsearch.service';
 
-import * as vega from 'vega';
+/*import * as vega from 'vega';*/
+import embed from 'vega-embed';
 
 @Component({
   selector: 'app-search',
@@ -74,7 +75,7 @@ export class SearchComponent implements OnInit {
                     this.weather = response.weather;
                     this.date = response.date;
 
-                    this.vegaInit(response.vega, 1);
+                    this.vegaInit(response.vega);
                   }
                   ,
                   err => {
@@ -89,12 +90,13 @@ export class SearchComponent implements OnInit {
    console.log('vega init '+spec);
    console.log(spec);
 
-   var view1 = new vega.View(vega.parse(spec))
+   /*var view1 = new vega.View(vega.parse(spec))
       .renderer('svg')  // set renderer (canvas or svg)
       .initialize("#vegabox") // initialize view within parent DOM container
       .hover()             // enable hover encode set processing
       .run();
-
+*/
+    embed("#vegabox", spec, { actions: false });
 
   }
 
