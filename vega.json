@@ -1,32 +1,42 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "description": "A vertical 2D box plot showing median, min, and max in the US population distribution of age groups in ZXX.",
-  "data": {
-     "values": 
-       [{"year":1850,"age":0,"sex":1,"people":1483789},
-{"year":1850,"age":0,"sex":2,"people":1450376},
-{"year":1850,"age":5,"sex":1,"people":5555},
-{"year":1850,"age":5,"sex":2,"people":1359668},
-{"year":1850,"age":10,"sex":1,"people":1260099},
-{"year":1850,"age":10,"sex":2,"people":1216114},
-{"year":1850,"age":15,"sex":1,"people":1077133},
-{"year":1850,"age":15,"sex":2,"people":1110619},
-{"year":1850,"age":20,"sex":1,"people":1017281},
-{"year":1850,"age":20,"sex":2,"people":1003841},
-{"year":1850,"age":25,"sex":1,"people":862547},
-{"year":1850,"age":25,"sex":2,"people":799482}
+   "width": 300,
+  "height": 150,
+ "title": "Temperature next 5 days",
+  "description": "Temperature trends in next 5 days.",
+ "data": {
+     "values":
+       [
+       
+{"day":"day0", "category": "high", "value": high0},
+{"day":"day0", "category": "low", "value": low0},
+{"day":"day1", "category": "high", "value": high1},
+{"day":"day1", "category": "low", "value": low1},
+{"day":"day2", "category": "high", "value": high2},
+{"day":"day2", "category": "low", "value": low2},
+{"day":"day3", "category": "high", "value": high3},
+{"day":"day3", "category": "low", "value": low3},
+{"day":"day4", "category": "high", "value": high4},
+{"day":"day4", "category": "low", "value": low4}
      ]
   },
+
   "mark": {
-    "type": "boxplot"
+    "type": "line",
+    "point": {
+      "filled": false,
+      "fill": "white"
+    }
   },
   "encoding": {
-    "x": {"field": "age","type": "ordinal"},
-    "y": {
-      "field": "people",
-      "type": "quantitative",
-      "axis": {"title": "population"}
-    }
+    "x": {"field": "day", "type": "ordinal", "title":""},
+    "y": {"dayggregate":"mean", "field": "value", "type": "quantitative", "title":"fahrenheit"},
+    "color": {
+      "field": "category", "type": "nominal", 
+              "scale": {"range": ["orange", "gray"], "type": "linear"}
+
+  }
+  
   }
 }
 

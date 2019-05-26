@@ -96,8 +96,11 @@ export class SearchComponent implements OnInit {
       .initialize("#vegabox") // initialize view within parent DOM container
       .hover()             // enable hover encode set processing
       .run();
+
+          embed("#vegabox", spec, { actions: false });
+
 */
-    embed("#vegabox", spec, { actions: false });
+    embed("#vegabox", spec);
 
   }
 

@@ -19,12 +19,11 @@
 
     width: 700px;
     height: 100px;
-    height: 100px;
 }
 
 
 .img {
-  width: 40%;
+  width: 60%;
 
 }
 
@@ -40,4 +39,39 @@
   width: 100px;
   height: 60px;
 
+}
+.legendText {
+  font-family: Verdana, Geneva, sans-serif;
+   font-size: 150%;
+   font-style: italic;
+
+}
+.footer-copyright{
+  width: 100%;
+  background-color: lightgray;
+  text-align: center;
+}
+
+.titlearea{
+  background-image: url("assets/images/person.jpg");
+   background-size: 160px 80px;
+   background-repeat: no-repeat;
+   height: 150px;
+}
+.weatherDate{
+ padding-top: 100px;
+ border: 1px ;
+ font-size: 150%;
+ font-style: italic;
+}
+
+.weatherTitle{
+ padding-left : 200px;
+ font-size: 250%;
+ border: 1px ;
+}
+
+.vegabox{
+   height: 250px;
+   width: 400px;
 }
