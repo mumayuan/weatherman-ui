@@ -11,7 +11,7 @@ import { SearchComponent } from './search/search.component';
 import { MydataService } from './core/services/mydata.service';
 import { HttpClientModule }    from '@angular/common/http';
 import { WeatherlocationsearchService } from './core/services/weatherlocationsearch.service';
-import { MatAutocompleteModule, MatInputModule , MatButtonModule, MatCardModule } from '@angular/material';
+import { MatAutocompleteModule, MatInputModule , MatButtonModule, MatCardModule, MatProgressSpinnerModule,  } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -34,6 +34,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
+    MatProgressSpinnerModule,
     FlexLayoutModule
   ],
   providers: [MydataService, WeatherlocationsearchService],

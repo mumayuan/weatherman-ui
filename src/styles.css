@@ -56,7 +56,7 @@
   background-image: url("assets/images/person.jpg");
    background-size: 160px 80px;
    background-repeat: no-repeat;
-   height: 150px;
+   height: 200px;
 }
 .weatherDate{
  padding-top: 100px;
@@ -67,7 +67,7 @@
 
 .weatherTitle{
  padding-left : 200px;
- font-size: 250%;
+ font-size: 200%;
 
 }
 

@@ -26,6 +26,11 @@
     <button mat-raised-button color="primary" (click)="getWeather()">Tell me weather</button>
 </div>
 
+<div class="resultcontainer">
+<div class="spinner-container" *ngIf="searching == true">
+    <mat-spinner></mat-spinner>
+</div>
+
 <div class="itemContainer" *ngIf="weather">
     <div class="weatherDate"> {{date}}</div>
 
@@ -55,3 +60,4 @@
 </div>
 
 <div class="vegabox" id="vegabox"   [style.display]="weather?'block':'none'"></div>
+</div>

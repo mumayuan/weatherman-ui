@@ -16,7 +16,7 @@ export class MydataService {
 
    getForecast(location: string): Observable<any> {
             return this.http.get<string>(this.apiGateWayURL+ location)
-            .pipe(delay(3000))
+            /*.pipe(delay(3000))  for debugging spinner */
                 .pipe(
                     map( spec => {
                         return spec;

@@ -14,6 +14,7 @@ import embed from 'vega-embed';
 })
 export class SearchComponent implements OnInit {
 
+  searching = false;
   content: any;
   weather: any;
   date: any;
@@ -58,7 +59,7 @@ export class SearchComponent implements OnInit {
 
 
   getWeather(){
-
+     this.searching = true;
      console.log(this.queryField);
      //console.log('selected '+ this.queryField.value.Key + " of "+ this.queryField.value.LocalizedName);
      this.content = this.queryField.value;
@@ -66,13 +67,17 @@ export class SearchComponent implements OnInit {
 
     console.log(this.content);
 
-    var key = 'stuff'
+    var key = 'mq2'
     if(this.content){
-        key =  this.content.key;
+        key =  this.content.Key;
     }
+
+    console.log('---> Goint ething went wrong '+key);
+
     console.log('selected key-> '+ key) ;
         this.mydataService.getForecast( key)
                   .subscribe(response => {
+                    this.searching = false;
                     /*this.vegaInit(spec);*/
                     console.log('get from API gateway');
                     console.log(response);
