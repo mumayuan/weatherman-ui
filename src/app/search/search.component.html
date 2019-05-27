@@ -2,62 +2,56 @@
 
 
 <div>
-  <mat-form-field class="container">
+    <mat-form-field class="container">
 
-    <!-- ADD AN INPUT BOX OF TYPE TEXT AND LINK IT TO THE AUTO COMPLETE PANEL. -->
-    <input type="text" placeholder="Type a city name ..."
-           matInput
-           [formControl]="queryField"
-           [matAutocomplete]="auto">
+        <!-- ADD AN INPUT BOX OF TYPE TEXT AND LINK IT TO THE AUTO COMPLETE PANEL. -->
+        <input type="text" placeholder="Type a city name ..."
+               matInput
+               [formControl]="queryField"
+               [matAutocomplete]="auto">
 
-    <!-- CREATE AUTO COMPLETE PANEL WITH OPTIONS. -->
-    <mat-autocomplete #auto="matAutocomplete"  [displayWith]="displayFn">
-      <mat-option *ngFor="let city of cities"   [value]="city">
-        {{ city.LocalizedName }}, {{city.AdministrativeArea.LocalizedName}}, {{city.Country.LocalizedName}}
-      </mat-option>
-    </mat-autocomplete>
+        <!-- CREATE AUTO COMPLETE PANEL WITH OPTIONS. -->
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let city of cities" [value]="city">
+                {{ city.LocalizedName }}, {{city.AdministrativeArea.LocalizedName}}, {{city.Country.LocalizedName}}
+            </mat-option>
+        </mat-autocomplete>
 
-  </mat-form-field>
+    </mat-form-field>
 
 
 </div>
 <div class="searchcontainer">
-  <button mat-raised-button color="accent.re"  (click)="reset()">clear</button>
-  <button mat-raised-button color="primary"  (click)="getWeather()">Tell me weather</button>
+    <button mat-raised-button color="accent.re" (click)="reset()">clear</button>
+    <button mat-raised-button color="primary" (click)="getWeather()">Tell me weather</button>
 </div>
 
-<div class="itemContainer"  *ngIf="weather" >
-  <div class="weatherDate" > {{date}} </div>
+<div class="itemContainer" *ngIf="weather">
+    <div class="weatherDate"> {{date}}</div>
 
-  <div class="titlearea">
-  <div class="weatherTitle" >{{weather}} </div>
+    <div class="titlearea">
+        <div class="weatherTitle">{{weather}}</div>
 
-  </div>
-
-
-  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="15px" fxLayoutAlign="center"
-       >
-    <div fxFlex="20%"   *ngFor="let day of fiveDays" >
-      <fieldset  class="dayBox">
-        <legend class="legendText">{{day.date}}</legend>
-      <div >
-
-      <img mat-card-image class="img" src="https://developer.accuweather.com/sites/default/files/{{day.dayIcon}}-s.png">
-      <label class="dayText"> Day {{day.dayText}} </label>
-      <img mat-card-image class="img" src="https://developer.accuweather.com/sites/default/files/{{day.nightIcon}}-s.png">
-      <label > Night {{day.nightText}} </label>
-      </div>
-        </fieldset>
     </div>
 
-  </div>
 
+    <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="15px" fxLayoutAlign="center">
+        <div fxFlex="20%" *ngFor="let day of fiveDays">
+            <fieldset class="dayBox">
+                <legend class="legendText">{{day.date}}</legend>
+                <div>
 
+                    <img mat-card-image class="img"
+                         src="https://developer.accuweather.com/sites/default/files/{{day.dayIcon}}-s.png">
+                    <label class="dayText"> Day {{day.dayText}} </label>
+                    <img mat-card-image class="img"
+                         src="https://developer.accuweather.com/sites/default/files/{{day.nightIcon}}-s.png">
+                    <label> Night {{day.nightText}} </label>
+                </div>
+            </fieldset>
+        </div>
 
-
-
-
+    </div>
 </div>
 
-
-<div class="vegabox"   id="vegabox"> </div>
+<div class="vegabox" id="vegabox"   [style.display]="weather?'block':'none'"></div>

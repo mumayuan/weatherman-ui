@@ -68,10 +68,23 @@
 .weatherTitle{
  padding-left : 200px;
  font-size: 250%;
- border: 1px ;
+
 }
 
 .vegabox{
-   height: 250px;
-   width: 400px;
+   align: center;
+   padding: 30px 100px 10px 200px;
+}
+
+.none {
+  opacity: 0;
+  height: 150px;
+  width: 300px;
+}
+
+.show {
+  height: 150px;
+  width: 300px;
+  transition: all linear 0.5s;
+
 }

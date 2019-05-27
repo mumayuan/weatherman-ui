@@ -47,12 +47,17 @@ export class SearchComponent implements OnInit {
 
   }
 
+
+
+
   reset(){
-    this.queryField.reset();
     this.weather = null;
+    this.queryField.reset();
+
   }
+
+
   getWeather(){
-     console.log('Clicked '+ this.queryField);
 
      console.log(this.queryField);
      //console.log('selected '+ this.queryField.value.Key + " of "+ this.queryField.value.LocalizedName);
@@ -68,7 +73,6 @@ export class SearchComponent implements OnInit {
     console.log('selected key-> '+ key) ;
         this.mydataService.getForecast( key)
                   .subscribe(response => {
-
                     /*this.vegaInit(spec);*/
                     console.log('get from API gateway');
                     console.log(response);

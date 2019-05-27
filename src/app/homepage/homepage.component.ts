@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
+  checked: any;
 
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }

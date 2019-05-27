@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Search } from '../../shared/interfaces';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { map, catchError, tap } from 'rxjs/operators';
+import { map, catchError, tap , delay} from 'rxjs/operators';
 
 @Injectable()
 export class MydataService {
@@ -16,6 +16,7 @@ export class MydataService {
 
    getForecast(location: string): Observable<any> {
             return this.http.get<string>(this.apiGateWayURL+ location)
+            .pipe(delay(3000))
                 .pipe(
                     map( spec => {
                         return spec;
