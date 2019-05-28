@@ -3,7 +3,7 @@ import 'rxjs/add/operator/debounceTime';
 import { FormControl } from '@angular/forms';
 import { MydataService } from '../core/services/mydata.service';
 import { WeatherlocationsearchService } from '../core/services/weatherlocationsearch.service';
-
+import { MatSnackBar } from '@angular/material';
 /*import * as vega from 'vega';*/
 import embed from 'vega-embed';
 
@@ -21,13 +21,19 @@ export class SearchComponent implements OnInit {
   fiveDays: any;
   cities: any[] = [];
   queryField: FormControl = new FormControl('');
+
   constructor(private mydataService: MydataService,
-  private myWeatherlocationsearchService: WeatherlocationsearchService) {  }
+             private snackBar: MatSnackBar,
+             private myWeatherlocationsearchService: WeatherlocationsearchService
+  ) {  }
 
   ngOnInit() {
 
-    console.log('During search init');
+      console.log('During search init');
 
+
+      this.snackBar.open("Auto complete will stop working after exceeding 50 free daily API queries. Please just hit the Tell me! button for the sample data.",
+                  'Dismiss', {duration: 4000});
 
       this.queryField.valueChanges
             .debounceTime(500)
