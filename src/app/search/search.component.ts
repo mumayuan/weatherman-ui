@@ -72,7 +72,6 @@ export class SearchComponent implements OnInit {
         key =  this.content.Key;
     }
 
-    console.log('---> Goint ething went wrong '+key);
 
     console.log('selected key-> '+ key) ;
         this.mydataService.getForecast( key)
@@ -89,7 +88,7 @@ export class SearchComponent implements OnInit {
                   }
                   ,
                   err => {
-                    console.log('yyy   Something went wrong '+err);
+                    console.log('Something went wrong '+err);
                   }
 
                   );

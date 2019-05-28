@@ -22,8 +22,8 @@
 
 </div>
 <div class="searchcontainer">
-    <button mat-raised-button color="accent.re" (click)="reset()">clear</button>
-    <button mat-raised-button color="primary" (click)="getWeather()">Tell me weather</button>
+    <button mat-raised-button color="accent" (click)="reset()">clear</button>
+    <button mat-raised-button color="primary" (click)="getWeather()">Tell me!</button>
 </div>
 
 <div class="resultcontainer">
@@ -45,13 +45,13 @@
             <fieldset class="dayBox">
                 <legend class="legendText">{{day.date}}</legend>
                 <div>
-
+                    <label class="dayText"> High: {{day.dayHigh}} Low: {{day.dayLow}} </label>
                     <img mat-card-image class="img"
                          src="https://developer.accuweather.com/sites/default/files/{{day.dayIcon}}-s.png">
-                    <label class="dayText"> Day {{day.dayText}} </label>
+                    <label class="dayText"> Day: {{day.dayText}} </label>
                     <img mat-card-image class="img"
                          src="https://developer.accuweather.com/sites/default/files/{{day.nightIcon}}-s.png">
-                    <label> Night {{day.nightText}} </label>
+                    <label> Night: {{day.nightText}} </label>
                 </div>
             </fieldset>
         </div>
