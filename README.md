@@ -1,4 +1,4 @@
-# weatherman
+# Weather Man 
 
 This is a prototype of a serverless architecture.  
 * Web application (Angular) is hosted on S3
